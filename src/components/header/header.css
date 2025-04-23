@@ -131,6 +131,7 @@ header .bars {
     right: 0;
     background-color: white;
     overflow: hidden;
+    z-index: 100;
 }
 
 .sideBar .back {

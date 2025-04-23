@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './header.css'
 import { Link } from 'react-router'
 import {assets} from '../../assets/frontend_assets/assets' 
+import { ShopContext } from '../../context/GlobalVars'
 
 const Header = () => {
     let [visiable,setVisible]=useState(false);
+    const {setShowSearch}=useContext(ShopContext);
     return (
         <>
         <header>
@@ -20,7 +22,7 @@ const Header = () => {
                 </ul>
             </nav>
             <ul className="icons">
-                <li><Link to={'/collection'}><img src={assets.search_icon} alt="please wait" loading='lazy'/></Link></li>
+                <li><Link to={'/collection'}><img src={assets.search_icon} alt="please wait" loading='lazy' onClick={()=> setShowSearch(true)}/></Link></li>
                 <li>
                     <Link to={'/login'}><img src={assets.profile_icon} alt="please wait" loading='lazy'/></Link>
                     <div className="profile">

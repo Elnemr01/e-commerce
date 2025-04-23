@@ -49,10 +49,6 @@
     text-transform: uppercase;
 }
 
-.collectionSection .filter .checkboxes {
-    
-}
-
 .collectionSection .filter .checkboxes > div {
     padding-right: 100px;
     display: flex;

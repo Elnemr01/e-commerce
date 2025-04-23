@@ -6,12 +6,13 @@ import { Link } from 'react-router'
 import Product from '../components/product/Product'
 import Footer from '../components/footer/Footer'
 import { assets } from '../assets/frontend_assets/assets'
+import SearchContainer from '../components/search/SearchContainer'
 
 const Collection = () => {
     const [myProducts,setProducts]=useState([]);
     const [showFiter,setShowFilter]=useState(false);
     const [sortType,setSortType]=useState('');
-    const {products,catogry,subCatogry}=useContext(ShopContext);
+    const {products,catogry,subCatogry,searchProduct,showSearch}=useContext(ShopContext);
 
     useEffect(()=> {
         setProducts(products);
@@ -19,7 +20,7 @@ const Collection = () => {
 
     useEffect(()=> {
         handleFilter();
-    },[catogry,subCatogry]);
+    },[catogry,subCatogry,showSearch,searchProduct]);
 
     useEffect(()=> {
         handleSelectForSorting();
@@ -50,7 +51,8 @@ const Collection = () => {
     // handle filter function
 
     const handleFilter =()=> {
-        if(catogry.length!==0 || subCatogry.length!==0) {
+
+        if (catogry.length!==0 || subCatogry.length!==0) {
             setProducts(
                 products.filter((ele)=> {
                     if(catogry.length!==0 && subCatogry.length!==0) {
@@ -68,11 +70,17 @@ const Collection = () => {
         else {
             setProducts(products);
         }
+
+        if(showSearch && searchProduct) {
+            setProducts(products.filter((e)=> e.name.toLowerCase().includes(searchProduct.toLowerCase())));
+        }
+
     }
 
 
     return (
         <div className='collectionPage'>
+        <SearchContainer/>
             <div className="collectionSection">
                 <div className="filters">
                     <h1 onClick={()=> setShowFilter(!showFiter)}>filters
@@ -101,7 +109,6 @@ const Collection = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
         </div>
     )
 }

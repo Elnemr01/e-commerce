@@ -9,6 +9,9 @@ export let ShopContext=createContext();
 const ContextProvider = ({children}) => {
     const [catogry,setCatogry]=useState([]);
     const [subCatogry,setSubCatogry]=useState([]);
+    const [searchProduct,setSearchProduct]=useState('');
+    const [showSearch,setShowSearch]=useState(false);
+
     let delvery_fee=10;
     let currency="$";
 
@@ -37,7 +40,11 @@ const ContextProvider = ({children}) => {
         addCatogry,
         addSubCatogry,
         removeCatogry,
-        removeSubCatogry
+        removeSubCatogry,
+        searchProduct,
+        setSearchProduct,
+        showSearch,
+        setShowSearch
     }
     return (
         <ShopContext value={val}>
