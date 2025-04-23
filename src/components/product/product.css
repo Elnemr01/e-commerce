@@ -1,0 +1,30 @@
+.product {
+
+}
+
+.product .image {
+    overflow: hidden;
+}
+
+.product .image img {
+    transition: .2s;
+}
+
+.product .image img:hover {
+    transform: scale(1.07);
+}
+
+
+.product .name {
+    font-size: .875rem;
+    color: #374151;
+    font-weight: 500;
+    padding: .75rem 0 ;
+}
+
+
+.product .price {
+    font-size: .875rem;
+    color: rgb(55 65 81);
+    font-weight: 500;
+}

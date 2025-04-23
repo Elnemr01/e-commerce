@@ -1,0 +1,122 @@
+.collectionSection {
+    display: flex;
+    margin-top: 35px;
+    gap: 2.5rem;
+}
+
+@media (width<=776px) {
+    .collectionSection {
+        flex-direction: column;
+    }
+}
+
+/* ---------------filters styles--------------- */
+
+.collectionSection .filters h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.30rem;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    pointer-events: none;
+}
+
+.collectionSection .filters h1 img {
+    display: none;
+}
+
+@media (width<=776px) {
+    .collectionSection .filters h1 {
+        cursor: pointer;
+        pointer-events: all;
+    }
+    .collectionSection .filters h1 img {
+        display: inline;
+        height: 12px;
+    }
+}
+
+.collectionSection .filter {
+    margin-top: 25px;
+    border: 1px solid #eee;
+    padding: 10px 15px;
+}
+
+.collectionSection .filter h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.collectionSection .filter .checkboxes {
+    
+}
+
+.collectionSection .filter .checkboxes > div {
+    padding-right: 100px;
+    display: flex;
+    margin-top: 8px;
+    align-items: center;
+}
+
+.collectionSection .filter input {
+    cursor: pointer;
+}
+
+.collectionSection .filter label {
+    margin-left: 10px;
+    text-transform: capitalize;
+    color: rgb(55 65 81);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* --------------------collectios----------------------- */
+
+.collections {
+    flex: 1;
+}
+
+/* heading */
+.collections .heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collections .heading p {
+    display: none;
+}
+
+.collections .heading .title {
+    margin: 0;
+    padding: 0;
+}
+
+.collections .heading .title div span {
+    font-size: 22px;
+}
+
+@media (width<=400px) {
+    .collections .heading .title div span {
+        font-size: .875rem
+    }
+}
+/* select */
+
+.collections select {
+    padding: 12px 8px;
+    border: 1px solid #eee;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+/* products */
+
+.collections .products {
+    margin-top: 25px;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+}

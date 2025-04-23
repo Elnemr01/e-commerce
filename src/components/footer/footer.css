@@ -1,0 +1,77 @@
+footer {
+
+}
+
+footer .firstPart {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    color: rgb(75 85 99 );
+    border-bottom: 1px solid #eee;
+    padding-bottom: 50px;
+    font-size: 14px;
+    margin-top: 80px;
+}
+
+@media (width<=640px) {
+    footer .firstPart {
+        flex-direction: column;
+    }
+}
+
+footer .firstPart .image {
+    max-width: 130px;
+    margin-bottom: 15px;
+}
+
+footer .firstPart .text {
+    
+}
+
+footer .firstPart .company {
+    
+}
+
+footer h2 {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 15px;
+}
+
+footer .firstPart .company ul {
+    
+}
+
+footer .firstPart .company ul li {
+    text-transform: capitalize;
+    padding: 3px 0;
+}
+
+footer .firstPart .contact {
+    
+}
+
+footer h2 {
+    
+}
+
+footer .firstPart .contact p {
+    padding: 3px 0;
+}
+
+footer .copyRigth {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .875rem;
+    font-size: 0.75rem;
+}
+
+@media (width <=400px) {
+    footer .copyRigth {
+        font-size: 0.75rem;
+    }
+}
