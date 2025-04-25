@@ -3,7 +3,7 @@ import './tittle.css'
 
 
 
-const CommonTittle = ({word1,word2}) => {
+const CommonTittle = ({word1,word2,showP}) => {
     return (
         <div className='title'>
             <div>
@@ -11,10 +11,10 @@ const CommonTittle = ({word1,word2}) => {
                 <span>{word2}</span>
                 <span></span>
             </div>
-            <p>
+            {showP && <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the.
-            </p>
+            </p>}
         </div>
     )
 }

@@ -93,7 +93,7 @@ const Collection = () => {
                 </div>
                 <div className="collections">
                     <div className="heading">
-                        <CommonTittle word1={'all'} word2={'collections'}/>
+                        <CommonTittle word1={'all'} word2={'collections'} showP={false}/>
                         <select name="select" id="select" onChange={(e)=> setSortType(e.target.value)}>
                             <option value="relavent">sorted by: Relavent</option>
                             <option value="low-high">sorted by: low to high</option>
