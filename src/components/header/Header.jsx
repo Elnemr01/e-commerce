@@ -3,10 +3,12 @@ import './header.css'
 import { Link } from 'react-router'
 import {assets} from '../../assets/frontend_assets/assets' 
 import { ShopContext } from '../../context/GlobalVars'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
     let [visiable,setVisible]=useState(false);
     const {setShowSearch}=useContext(ShopContext);
+    let cart=useSelector(state => state.cart);
     return (
         <>
         <header>
@@ -35,7 +37,7 @@ const Header = () => {
                 </li>
                 <li>
                     <Link to={'/cart'}><img src={assets.cart_icon} alt="please wait" loading='lazy'/>
-                        <p className="count">0</p>
+                        <p className="count">{cart.length}</p>
                     </Link>
                 </li>
                 <li>

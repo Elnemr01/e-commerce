@@ -5,6 +5,8 @@ import { ShopContext } from '../context/GlobalVars';
 import CommonTittle from '../components/commonTittle/CommonTittle';
 import Product from '../components/product/Product';
 import { assets } from '../assets/frontend_assets/assets';
+import { useDispatch, useSelector } from 'react-redux';
+import { addProduct } from '../reduxToolKit/cartSlice';
 
 const ProductPage = () => {
     let [productData,setProductData]=useState({});
@@ -13,15 +15,14 @@ const ProductPage = () => {
     let [size,setSize]=useState('');
     let {products,currency}=useContext(ShopContext);
     let {id}=useParams();
-
-
+    let dispatch=useDispatch();
 
     useEffect(()=> {
         getTheProduct();
     },[productData,id]);
 
 
-    // fetch to get the product 
+    // fetch to get the product
     const getTheProduct=async ()=> {
         let tempProducts=products.map((item)=> {
             if(item._id===id) {
@@ -30,12 +31,26 @@ const ProductPage = () => {
                 return null;
             }
         })
-
         setRelatedProducts(products.filter((item)=> item.category===productData.category));
     }
 
-    const showImage = (e)=> {
-        setImage(e.target.src);
+    const addProductToCart=(pro)=> {
+        if(size!=='') {
+            if(productData.pieceNum) {
+                dispatch(addProduct({
+                    ...pro,
+                    chociedSize: size,
+                    pieceNum:1,
+                }));
+            }
+            else {
+                dispatch(addProduct({
+                    ...pro,
+                    chociedSize: size,
+                    pieceNum: productData.pieceNum+1,
+                }));
+            }
+        }
     }
     
     return image ? (
@@ -44,7 +59,7 @@ const ProductPage = () => {
                 <div className="photos">
                     <ul>
                         {productData.image.map((src,i)=> {
-                            return <li key={i}><img src={src} alt="check connection" loading='lazy' onClick={(ev)=> showImage(ev)}/></li>
+                            return <li key={i}><img src={src} alt="check connection" loading='lazy' onClick={(ev)=> setImage(ev.target.src)}/></li>
                         })}
                     </ul>
                     <div className="shownImage">
@@ -69,7 +84,7 @@ const ProductPage = () => {
                             {productData.sizes.map((e,i)=> <li key={i} className={`${size===e? 'choiced':''}`}><button onClick={()=> setSize(e)}>{e}</button></li>)}
                         </ul>
                     </div>
-                    <button>add to cart</button>
+                    <button onClick={()=> addProductToCart(productData)}>add to cart</button>
                     <div className="goodInfo">
                         <p>100% Original product.</p>
                         <p>Cash on delivery is available on this product.</p>
