@@ -11,6 +11,7 @@ const ContextProvider = ({children}) => {
     const [subCatogry,setSubCatogry]=useState([]);
     const [searchProduct,setSearchProduct]=useState('');
     const [showSearch,setShowSearch]=useState(false);
+    const [payment,setPayment]=useState('');
 
     let delvery_fee=10;
     let currency="$";
@@ -44,7 +45,9 @@ const ContextProvider = ({children}) => {
         searchProduct,
         setSearchProduct,
         showSearch,
-        setShowSearch
+        setShowSearch,
+        payment,
+        setPayment
     }
     return (
         <ShopContext value={val}>

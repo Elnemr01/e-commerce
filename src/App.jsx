@@ -11,10 +11,12 @@ import Orders from './pages/Orders'
 import Header from './components/header/Header'
 import ProductPage from './pages/ProductPage'
 import Footer from './components/footer/Footer'
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <div className="App container">
+      <ToastContainer/>
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>

@@ -1,0 +1,81 @@
+.orderElement {
+    display: grid;
+    grid-template-columns: 4fr 2fr .5fr;
+    align-items: center;
+    border-top: 1px solid #80808045;
+    border-bottom: 1px solid #80808045;
+    padding: 1rem 0;
+    color: rgb(55 65 81 );
+}
+
+@media (width<=566px) {
+    .orderElement {
+        grid-template-rows: 2fr 1fr 1fr;
+        grid-template-columns: auto;
+    }
+}
+
+
+
+.orderElement .data {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.orderElement .data .image {
+    max-width: 5rem;
+}
+
+.orderElement .data .textData .name {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media (width<=566px) {
+    .orderElement .data .textData .name {
+        font-size: .875rem;
+    }
+}
+
+.orderElement .data .textData span:first-of-type {
+    font-size: 1rem;
+    margin-top: 6px;
+}
+
+.orderElement .data .textData span.quantity,
+.orderElement .data .textData span.size {
+    margin-left: 1rem;
+    margin-top: 6px;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.orderElement > button {
+    cursor: pointer;
+    width: max-content;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #eee;
+    padding: 7px 10px;
+    text-transform: capitalize;
+}
+
+.orderPlaced {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.orderPlaced p:first-of-type {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(34 197 94);
+    border-radius: 50%;
+}
+
+.orderPlaced p:last-of-type {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}

@@ -1,13 +1,20 @@
 .cartElement {
-
+    display: grid;
+    grid-template-columns: 4fr 2fr .5fr;
+    align-items: center;
+    border-top: 1px solid #80808045;
+    border-bottom: 1px solid #80808045;
+    padding: 1rem 0;
+    color: rgb(55 65 81 );
 }
 
 .cartElement .data {
-    
+    display: flex;
+    gap: 1.25rem;
 }
 
 .cartElement .data .image {
-    
+    max-width: 5rem;
 }
 
 .cartElement .data .image img {
@@ -19,21 +26,39 @@
 }
 
 .cartElement .data .textData .name {
-    
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media (width<=566px) {
+    .cartElement .data .textData .name {
+        font-size: .875rem;
+    }
 }
 
 .cartElement .data .textData span:first-of-type {
-    
+    font-size: 1rem;
+    margin-top: 6px;
 }
 
 .cartElement .data .textData span:last-of-type {
-    
+    margin-left: 1rem;
+    padding: 5px 10px;
+    background-color: #eee;
+    margin-top: 6px;
+    display: inline-block;
+    border: 1px solid #80808045;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .cartElement input {
-    
+    max-width: 70px;
+    padding: 2px 5px;
+    border: 1px solid #80808045;
 }
 
 .cartElement > img {
-    
+    max-width: 20px;
+    cursor: pointer;
 }

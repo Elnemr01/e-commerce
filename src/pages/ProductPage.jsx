@@ -7,6 +7,7 @@ import Product from '../components/product/Product';
 import { assets } from '../assets/frontend_assets/assets';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct } from '../reduxToolKit/cartSlice';
+import { toast } from 'react-toastify';
 
 const ProductPage = () => {
     let [productData,setProductData]=useState({});
@@ -36,21 +37,29 @@ const ProductPage = () => {
 
     const addProductToCart=(pro)=> {
         if(size!=='') {
-            if(productData.pieceNum) {
+            if("pieceNum" in pro ) {
                 dispatch(addProduct({
                     ...pro,
                     chociedSize: size,
-                    pieceNum:1,
+                    pieceNum: pro.pieceNum+1
                 }));
             }
             else {
                 dispatch(addProduct({
                     ...pro,
                     chociedSize: size,
-                    pieceNum: productData.pieceNum+1,
+                    pieceNum: 1,
                 }));
             }
         }
+        else {
+            toast.error('Select product size');
+        }
+    }
+
+    const handleMovingTop =()=> {
+        setSize('');
+        scrollTo({left:0,top:0,behavior:"smooth"});
     }
     
     return image ? (
@@ -115,7 +124,7 @@ const ProductPage = () => {
             <div className="relataedProducts">
                 {
                     relatedProducts.slice(0,5).map((e)=> <Link to={`/product/${e._id}`} key={e._id}
-                    onClick={()=> scrollTo({left:0,top:0,behavior:"smooth"})}><Product product={e}/></Link>)
+                    onClick={()=> handleMovingTop()}><Product product={e}/></Link>)
                 }
             </div>
         </div>

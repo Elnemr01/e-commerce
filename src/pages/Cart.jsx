@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import CommonTittle from '../components/commonTittle/CommonTittle';
 import CartElement from '../components/cartElement/CartElement';
 import { ShopContext } from '../context/GlobalVars';
+import { Link } from 'react-router';
 
 
 
@@ -17,8 +18,8 @@ const Cart = () => {
 
     useEffect(()=> {
         setChiocedProducts(cart);
-        console.log(cart)
-    },cart)
+        setTotalPrice(cart.reduce((acc,e)=> acc+((e.price)*(e.pieceNum)),0));
+    },[cart]);
 
     return (
         <div className='cartPage'>
@@ -26,30 +27,32 @@ const Cart = () => {
                 <CommonTittle word1={"your"} word2={'cart'} showP={false}/>
                 <div className="products">
                     {
-                    chiocedProducts.map((e)=> {
-                        return <CartElement product={e} key={e._id}/>
+                    chiocedProducts.map((e,i)=> {
+                        return <CartElement product={e} key={i}/>
                     })
             }
                 </div>
             </div>
 
             <div className="total">
-                <CommonTittle word1={"cart"} word2={'totals'} showP={false}/>
-                <div className="countTotal">
-                    <p>
-                        <span>Subtotal</span>
-                        <span>{currency}{totalPrice-delvery_fee}</span>
-                    </p>
-                    <p>
-                        <span>Shipping Fee</span>
-                        <span>{currency}{delvery_fee}</span>
-                    </p>
-                    <p>
-                        <span>Total</span>
-                        <span>{currency}{totalPrice}</span>
-                    </p>
+                <div>
+                    <CommonTittle word1={"cart"} word2={'totals'} showP={false}/>
+                    <div className="countTotal">
+                        <p>
+                            <span>Subtotal</span>
+                            <span>{currency}{totalPrice}</span>
+                        </p>
+                        <p>
+                            <span>Shipping Fee</span>
+                            <span>{currency}{delvery_fee}</span>
+                        </p>
+                        <p>
+                            <span>Total</span>
+                            <span>{currency}{`${cart.length===0? 0 : totalPrice+delvery_fee}`}</span>
+                        </p>
+                    </div>
+                    <Link to={'/place-order'}><button>proceed to checkout</button></Link>
                 </div>
-                <button>proceed to checkout</button>
             </div>
             
         </div>
