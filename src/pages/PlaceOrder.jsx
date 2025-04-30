@@ -11,7 +11,6 @@ const PlaceOrder = () => {
     const {delvery_fee,currency}=useContext(ShopContext);
     const cart=useSelector(state=> state.cart);
     const [totalPrice,setTotalPrice]=useState(0);
-    const [personOrderDate,setPersonOrderDate]=useState({});
     const {setPayment}=useContext(ShopContext);
     const dispatch=useDispatch();
 

@@ -1,0 +1,117 @@
+
+.contact .conLanding {
+    display: flex;
+    gap: 40px;
+}
+
+@media (width <=667px) {
+    .contact .conLanding {
+        flex-direction: column;
+        max-width: 100svh;
+    }
+}
+
+.conLanding .image {
+    flex-basis: 50%;
+}
+
+.conLanding .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+.conLanding .info h1 {
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(75 85 99 );
+}
+
+.conLanding .info .site,
+.conLanding .info .tele {
+    color: rgb(107 114 128);
+}
+
+
+.conLanding .info h2 {
+    color: rgb(75 85 99 );
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.conLanding .info > p {
+    color: rgb(107 114 128);
+    font-size: 15px;
+}
+
+.conLanding .info > button {
+    color: black;
+    background: white;
+    width: fit-content;
+    padding: 17px 25px;
+    text-transform: capitalize;
+    transition: .4s;
+    border: 1px solid black;
+    font-size: .875rem;
+}
+
+.conLanding .info > button:hover {
+    color: white;
+    background: black;
+}
+
+
+
+/* ----------part 2-------------- */
+
+
+.contact .part2 {
+    margin: 100px 0;
+    text-align: center;
+}
+
+.contact .part2 h2 {
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(31 41 55 );
+}
+
+.contact .part2 p {
+    margin: 15px 0 30px ;
+    line-height: 1.2;
+    color: rgb(156 163 175);
+}
+
+.contact .part2 .subscribe {
+    display: flex;
+    max-width: 50%;
+    margin: auto;
+}
+
+@media (width <= 640px) {
+    .contact .part2 .subscribe {
+        max-width: 100%;
+    }
+}
+
+.contact .part2 .subscribe input {
+    padding: 15px 20px;
+    border: 1px solid grey;
+    outline: none;
+    width: 100%;
+}
+
+.contact .part2 .subscribe input::placeholder {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.contact .part2 .subscribe button {
+    background-color: black;
+    color: white;
+    padding: 18px 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
