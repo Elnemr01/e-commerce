@@ -1,64 +1,37 @@
 .cartElement {
-    display: grid;
-    grid-template-columns: 4fr 2fr .5fr;
-    align-items: center;
-    border-top: 1px solid #80808045;
-    border-bottom: 1px solid #80808045;
-    padding: 1rem 0;
-    color: rgb(55 65 81 );
+@apply grid grid-cols-[4fr_2fr_.5fr] items-center border-t border-b border-[#80808045] py-[1rem] text-gray-800;
 }
 
 .cartElement .data {
-    display: flex;
-    gap: 1.25rem;
+@apply flex gap-[1.25rem];
 }
 
 .cartElement .data .image {
-    max-width: 5rem;
-}
-
-.cartElement .data .image img {
-    
-}
-
-.cartElement .data .textData {
-    
+@apply max-w-[5rem];
 }
 
 .cartElement .data .textData .name {
-    font-size: 1.2rem;
-    font-weight: 600;
+@apply text-[1.2rem] font-semibold;
 }
 
-@media (width<=566px) {
-    .cartElement .data .textData .name {
-        font-size: .875rem;
-    }
+@media (max-width: 566px) {
+.cartElement .data .textData .name {
+    @apply text-[0.875rem];
+}
 }
 
 .cartElement .data .textData span:first-of-type {
-    font-size: 1rem;
-    margin-top: 6px;
+@apply text-[1rem] mt-[6px];
 }
 
 .cartElement .data .textData span:last-of-type {
-    margin-left: 1rem;
-    padding: 5px 10px;
-    background-color: #eee;
-    margin-top: 6px;
-    display: inline-block;
-    border: 1px solid #80808045;
-    font-size: 1rem;
-    font-weight: 400;
+@apply ml-[1rem] px-[10px] py-[5px] bg-[#eee] mt-[6px] inline-block border border-[#80808045] text-[1rem] font-normal;
 }
 
 .cartElement input {
-    max-width: 70px;
-    padding: 2px 5px;
-    border: 1px solid #80808045;
+@apply max-w-[70px] px-[5px] py-[2px] border border-[#80808045];
 }
 
 .cartElement > img {
-    max-width: 20px;
-    cursor: pointer;
+@apply max-w-[20px] cursor-pointer;
 }

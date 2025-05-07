@@ -1,14 +1,9 @@
 .loginPage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @apply flex justify-center items-center;
 }
 
 .loginPage .title span {
-    color: rgb(55 65 81) !important;
-    text-transform: capitalize;
-    font-size: 28px;
-    font-weight: 500 !important;
+    @apply text-[28px] font-medium capitalize text-[rgb(55,65,81)] !important;
 }
 
 .loginPage .content {
@@ -16,42 +11,29 @@
 }
 
 .loginPage .content form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    @apply flex flex-col gap-[20px];
 }
 
 .loginPage .content form input {
-    padding: 10px;
-    border: 1.5px solid black;
+    @apply p-[10px] border-[1.5px] border-black;
 }
 
 .loginPage .content form input::placeholder {
-    text-transform: capitalize;
+    @apply capitalize;
 }
 
 .loginPage .content form .buttons {
-    display: flex;
-    justify-content: space-between;
-    font-size: .875rem;
+    @apply flex justify-between text-[0.875rem];
 }
 
 .loginPage .content form .buttons .sign {
-    text-transform: capitalize;
-    cursor: pointer;
+    @apply capitalize cursor-pointer;
 }
 
 .loginPage .content form .buttons .forget {
-    text-transform: capitalize;
-    cursor: pointer;
+    @apply capitalize cursor-pointer;
 }
 
 .loginPage .content form > button {
-    color: white;
-    background-color: black;
-    width: fit-content;
-    margin: 10px auto;
-    padding: 7px 20px;
-    text-transform: capitalize;
-    font-size: .875rem;
+    @apply text-white bg-black w-fit mx-auto my-0 px-[20px] py-[7px] capitalize text-[0.875rem] mt-[10px];
 }

@@ -1,157 +1,118 @@
-
 .placeOederPage {
-    display: flex;
-    gap: 40px;
+    @apply flex gap-[40px];
 }
 
-@media (width<=776px) {
+@media (width <= 776px) {
     .placeOederPage {
-        flex-direction: column;
+    @apply flex-col;
     }
 }
 
-
 .placeOederPage .title {
-    align-items: flex-start;
-    margin: 10px 0;
-    padding: 10px;
+    @apply items-start my-[10px] p-[10px];
 }
 
 /* -------------first part------------- */
-
 .placeOederPage .firstPart {
-    flex-basis: 50%;
+    @apply basis-1/2;
 }
 
 .placeOederPage .firstPart form {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    @apply p-[10px] flex flex-col gap-[16px];
 }
 
 .placeOederPage .firstPart form input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid rgb(209 213 219);
+    @apply p-[10px] rounded-[5px] border-[2px] border-[rgb(209,213,219)];
 }
 
 .placeOederPage .firstPart form input::placeholder {
-    text-transform: capitalize;
-    font-size: .875rem;
-    font-weight: 500;
+    @apply capitalize text-[0.875rem] font-medium;
 }
 
 .placeOederPage .firstPart input#email,
 .placeOederPage .firstPart input#street,
 .placeOederPage .firstPart input#phone {
-    width: 100%;
+    @apply w-full;
 }
 
 .placeOederPage .firstPart form .doubleInpt {
-    display: flex;
-    gap: 1rem;
+    @apply flex gap-[1rem];
 }
 
 .placeOederPage .firstPart form .doubleInpt input {
-    width: 100%;
+    @apply w-full;
 }
 
-
 /* -------------second part------------- */
-
 .placeOederPage .secondPart {
-    flex-basis: 50%;
+    @apply basis-1/2;
 }
 
 .placeOederPage .total {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    @apply mt-[50px] mb-[50px];
 }
 
 .placeOederPage .total > div {
-    flex-basis: 50%;
-    text-align: end;
+    @apply basis-1/2 text-end;
 }
 
-@media (width <=667px) {
+@media (width <= 667px) {
     .placeOederPage .total > div {
-        flex-basis: 100%;
+    @apply basis-full;
     }
 }
 
 .placeOederPage .total .countTotal p {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 400;
-    font-size: 1rem;
-    padding: 5px 10px;
+    @apply flex justify-between items-center font-normal text-[1rem] px-[10px] py-[5px];
 }
 
 .placeOederPage .total .countTotal p:nth-child(2) {
-    border-top: 1px solid #Eee;
-    border-bottom: 1px solid #Eee;
+    @apply border-t border-b border-[#eee];
 }
 
-
 .placeOederPage .total .countTotal p:last-child {
-    font-weight: 600;
+    @apply font-semibold;
 }
 
 /* payment style */
 .placeOederPage .paymentMethod .title span {
-    font-size: 20px;
+    @apply text-[20px];
 }
 
 .paymentMethod {
-    text-align: end;
+    @apply text-end;
 }
 
 .paymentMethod .methods {
-    display: flex;
-    gap: 20px;
+    @apply flex gap-[20px];
 }
 
-@media (width<=1100px) {
+@media (width <= 1100px) {
     .paymentMethod .methods {
-        flex-direction: column;
+    @apply flex-col;
     }
 }
 
 .paymentMethod .methods .method {
-    display: flex;
-    border: 1px solid rgb(209 213 219);
-    padding: 5px 10px;
-    gap: 20px;
+    @apply flex border border-[rgb(209,213,219)] px-[10px] py-[5px] gap-[20px];
 }
 
-
 .paymentMethod .methods .method input {
-    accent-color: green
+    accent-color: green;
 }
 
 .paymentMethod .methods .method label {
-    height: 1.25rem;
+    @apply h-[1.25rem];
 }
 
 .paymentMethod .methods .method:last-child label {
-    font-size: 12px;
-    font-weight: 600;
+    @apply text-[12px] font-semibold;
 }
 
 .paymentMethod .methods .method img {
-    height: 100%;
+    @apply h-full;
 }
 
 .paymentMethod > a {
-    background-color: black;
-    color: white;
-    padding: 10px 60px;
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: .25px;
-    text-transform: uppercase;
+    @apply bg-black text-white px-[60px] py-[10px] inline-block mt-[20px] text-[1rem] font-normal tracking-[0.25px] uppercase;
 }

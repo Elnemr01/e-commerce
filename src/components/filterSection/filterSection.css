@@ -1,118 +1,91 @@
 .collectionSection {
-    display: flex;
-    margin-top: 35px;
-    gap: 2.5rem;
+@apply flex mt-[35px] gap-[2.5rem];
 }
 
-@media (width<=776px) {
-    .collectionSection {
-        flex-direction: column;
-    }
+@media (max-width: 776px) {
+.collectionSection {
+    @apply flex-col;
+}
 }
 
 /* ---------------filters styles--------------- */
 
 .collectionSection .filters h1 {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 1.30rem;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    pointer-events: none;
+@apply uppercase font-semibold text-[1.30rem] flex gap-[10px] items-center pointer-events-none;
 }
 
 .collectionSection .filters h1 img {
-    display: none;
+@apply hidden;
 }
 
-@media (width<=776px) {
-    .collectionSection .filters h1 {
-        cursor: pointer;
-        pointer-events: all;
-    }
-    .collectionSection .filters h1 img {
-        display: inline;
-        height: 12px;
-    }
+@media (max-width: 776px) {
+.collectionSection .filters h1 {
+    @apply cursor-pointer pointer-events-auto;
+}
+
+.collectionSection .filters h1 img {
+    @apply inline h-[12px];
+}
 }
 
 .collectionSection .filter {
-    margin-top: 25px;
-    border: 1px solid #eee;
-    padding: 10px 15px;
+@apply mt-[25px] border border-[#eee] px-[15px] py-[10px];
 }
 
 .collectionSection .filter h2 {
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
+@apply text-[1rem] font-medium uppercase;
 }
 
 .collectionSection .filter .checkboxes > div {
-    padding-right: 100px;
-    display: flex;
-    margin-top: 8px;
-    align-items: center;
+@apply pr-[100px] flex mt-[8px] items-center;
 }
 
 .collectionSection .filter input {
-    cursor: pointer;
+@apply cursor-pointer;
 }
 
 .collectionSection .filter label {
-    margin-left: 10px;
-    text-transform: capitalize;
-    color: rgb(55 65 81);
-    cursor: pointer;
-    font-size: 14px;
+@apply ml-[10px] capitalize text-gray-700 cursor-pointer text-[14px];
 }
 
 /* --------------------collectios----------------------- */
 
 .collections {
-    flex: 1;
+@apply flex-1;
 }
 
 /* heading */
 .collections .heading {
-    display: flex;
-    justify-content: space-between;
+@apply flex justify-between;
 }
 
 .collections .heading p {
-    display: none;
+@apply hidden;
 }
 
 .collections .heading .title {
-    margin: 0;
-    padding: 0;
+@apply m-0 p-0;
 }
 
 .collections .heading .title div span {
-    font-size: 22px;
+@apply text-[22px];
 }
 
-@media (width<=400px) {
-    .collections .heading .title div span {
-        font-size: .875rem
-    }
+@media (max-width: 400px) {
+.collections .heading .title div span {
+    @apply text-[0.875rem];
 }
+}
+
 /* select */
 
 .collections select {
-    padding: 12px 8px;
-    border: 1px solid #eee;
-    font-size: 12px;
-    text-transform: capitalize;
-    font-weight: 500;
+@apply px-[8px] py-[12px] border border-[#eee] text-[12px] capitalize font-medium;
 }
 
 /* products */
 
 .collections .products {
-    margin-top: 25px;
-    gap: 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+@apply mt-[25px] gap-[1rem] grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }

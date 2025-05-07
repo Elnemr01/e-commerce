@@ -1,5 +1,3 @@
 .ordersPage .title {
-    align-items: start;
-    padding: 0 ;
-    margin: 15px 0;
+    @apply items-start p-0 my-[15px];
 }

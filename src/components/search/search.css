@@ -1,30 +1,19 @@
 .collectionPage .search {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #eee;
-    width: 100%;
+    @apply p-[20px] flex items-center justify-center bg-[#eee] w-full;
 }
 
 .collectionPage .search img {
-    max-width: 1rem;
+    @apply max-w-[1rem];
 }
 
 .collectionPage .search img:last-child {
-    translate: -8px;
-    cursor: pointer;
+    @apply -translate-x-[8px] cursor-pointer;
 }
 
 .collectionPage .search img:first-of-type {
-    translate: -35px 0;
+    @apply -translate-x-[35px] translate-y-0;
 }
 
 .collectionPage .search input {
-    width: 60%;
-    padding: 5px 18px;
-    border-radius: 23px;
-    border: 1.5px solid gray;
-    padding-right: 50px;
-    outline: none;
+    @apply w-[60%] px-[18px] py-[5px] pr-[50px] rounded-[23px] border border-[1.5px] border-gray-500 outline-none;
 }

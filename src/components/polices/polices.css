@@ -1,85 +1,62 @@
+
 .policy {
-    padding: 50px 0;
+    @apply py-[50px];
 }
 
 .policy img {
-    margin: auto;
-    max-width: 60px;
+    @apply mx-auto max-w-[60px];
 }
 
 .policy .part1 {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    text-align: center;
+    @apply flex justify-center gap-[15px] text-center;
 }
 
-@media (width <=640px) {
+@media (max-width: 640px) {
     .policy .part1 {
-        flex-direction: column;
+    @apply flex-col;
     }
 }
 
 .policy .part1 h2 {
-    font-size: 15px;
-    font-weight: 500;
-    margin-top: 10px;
-    color: rgb(55 65 81);
+    @apply text-[15px] font-medium mt-[10px] text-gray-700;
 }
 
 .policy .part1 p {
-    color: rgb(156 163 175);
-    line-height: 1.2;
-    font-size: medium;
+    @apply text-gray-400 leading-[1.2] text-[medium];
 }
 
-/* ----------------part2------------- */
+/* ---------------- part2 ---------------- */
 
 .policy .part2 {
-    margin-top: 50px;
-    text-align: center;
+    @apply mt-[50px] text-center;
 }
 
 .policy .part2 h2 {
-    font-size: 25px;
-    font-weight: 600;
-    color: rgb(31 41 55 );
+    @apply text-[25px] font-semibold text-gray-800;
 }
 
 .policy .part2 p {
-    margin: 15px 0 30px ;
-    line-height: 1.2;
-    color: rgb(156 163 175);
+    @apply my-[15px] mb-[30px] leading-[1.2] text-gray-400;
 }
 
 .policy .part2 .subscribe {
-    display: flex;
-    max-width: 50%;
-    margin: auto;
+    @apply flex max-w-[50%] mx-auto;
 }
 
-@media (width <= 640px) {
+@media (max-width: 640px) {
     .policy .part2 .subscribe {
-        max-width: 100%;
+    @apply max-w-full;
     }
 }
 
 .policy .part2 .subscribe input {
-    padding: 15px 20px;
-    border: 1px solid grey;
-    outline: none;
-    width: 100%;
+    @apply px-[20px] py-[15px] border border-gray-500 outline-none w-full;
 }
 
 .policy .part2 .subscribe input::placeholder {
-    font-size: 13px;
-    font-weight: 400;
+    @apply text-[13px] font-normal;
 }
 
 .policy .part2 .subscribe button {
-    background-color: black;
-    color: white;
-    padding: 18px 20px;
-    text-transform: uppercase;
-    font-size: 14px;
+    @apply bg-black text-white px-[20px] py-[18px] uppercase text-[14px];
 }

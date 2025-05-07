@@ -1,183 +1,132 @@
-
 .productPage {
-    margin-top: 35px;
+    @apply mt-[35px];
 }
 
 .photos {
-    display: flex;
-    gap: 15px;
+    @apply flex gap-[15px];
 }
 
-
 .details {
-    display: flex;
-    gap: 35px;
+    @apply flex gap-[35px];
 }
 
 .details .photos ul {
-    display: flex;
-    flex-direction: column;
-    gap: .875rem;
+    @apply flex flex-col gap-[0.875rem];
 }
 
 .details li img {
-    max-width: 90px;
-    cursor: pointer;
+    @apply max-w-[90px] cursor-pointer;
 }
 
-@media (width <=992px) {
+@media (width <= 992px) {
     .photos {
-        flex-direction: column-reverse;
-        text-align: center;
+    @apply flex-col-reverse text-center;
     }
 
     .details {
-        flex-direction: column;
+    @apply flex-col;
     }
 
     .details .photos ul {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
+    @apply flex-row justify-center flex-wrap;
     }
 }
 
 .details .shownImage img {
-    margin: auto;
+    @apply m-auto;
 }
 
 /* -------------info section */
-
 .details .info .name {
-    margin-top: 5px;
-    font-size: 27px;
-    font-weight: 600;
+    @apply mt-[5px] text-[27px] font-semibold;
 }
 
-@media (width<=667px) {
+@media (width <= 667px) {
     .details .info .name {
-        font-size: 1rem;
+    @apply text-[1rem];
     }
 }
 
 .details .info .grade {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 12px 0;
+    @apply flex items-center gap-[5px] my-[12px];
 }
 
 .details .info .grade img {
-    width: 12px;
-    height: 12px;
+    @apply w-[12px] h-[12px];
 }
 
 .details .info .grade p {
-    font-size: 16px;
-    padding-left: 8px;
+    @apply text-[16px] pl-[8px];
 }
 
 .details .info .price {
-    font-size: 30px;
-    font-weight: 700
+    @apply text-[30px] font-bold;
 }
 
 .details .info .description {
-    color: gray;
-    line-height: 1.3;
-    margin: 15px 0;
-    font-size: 15px;
+    @apply text-gray-500 leading-[1.3] my-[15px] text-[15px];
 }
 
 .details .info .sizes {
-    
+    /* No styles defined */
 }
 
 .details .info .sizes h3 {
-    color: gray;
-    line-height: 1.3;
-    margin: 15px 0;
-    font-size: 15px;
+    @apply text-gray-500 leading-[1.3] my-[15px] text-[15px];
 }
 
 .details .info .sizes ul {
-    display: flex;
-    gap: 1rem;
+    @apply flex gap-[1rem];
 }
 
 .details .info .sizes ul li {
-    padding: 5px 10px;
-    background-color: #eee;
-    cursor: pointer;
-    border: 1px solid transparent;
+    @apply px-[10px] py-[5px] bg-[#eee] cursor-pointer border border-transparent;
 }
 
 .details .info .sizes ul li.choiced {
-    border-color: rgb(249 115 22);
+    @apply border-orange-500;
 }
 
 .details .info > button {
-    display: inline-block;
-    padding: 10px 30px;
-    background-color: black;
-    color: white;
-    text-transform: uppercase;
-    margin: 20px 0;
-    font-size: .875rem;
-    font-weight: 400;
+    @apply inline-block px-[30px] py-[10px] bg-black text-white uppercase my-[20px] text-[0.875rem] font-normal;
 }
 
 .details .info > button:active {
-    background-color: rgb(80, 79, 79);
+    @apply bg-[#504f4f];
 }
 
 .details .info .goodInfo {
-    padding-top: 20px;
-    border-top: 1px solid #eee;
+    @apply pt-[20px] border-t border-[#eee];
 }
 
 .details .info .goodInfo p {
-    color: gray;
-    margin: 5px 0;
-    font-size: 13px;
+    @apply text-gray-500 my-[5px] text-[13px];
 }
 
 /* ----------text------------- */
-
 .productPage .text {
-    margin: 50px 0;
+    @apply my-[50px];
 }
 
 .text span {
-    padding: 15px 20px;
-    border: 1px solid #EEE;
-    text-transform: capitalize;
-    font-size: 1rem;
-    font-weight: 600;
-    display: inline-block;
+    @apply px-[20px] py-[15px] border border-[#EEE] capitalize text-[1rem] font-semibold inline-block;
 }
 
 .text span:nth-child(2) {
-    font-weight: normal;
+    @apply font-normal;
 }
 
 .text .para2 {
-    border: 1px solid #eee;
-    padding: 15px 20px;
+    @apply border border-[#eee] px-[20px] py-[15px];
 }
 
 .text .para2 p {
-    line-height: 1.4;
-    font-size: 14px;
-    color: gray;
-    margin: 15px 0;
+    @apply leading-[1.4] text-[14px] text-gray-500 my-[15px];
 }
 
 /* ---------realeted products---------- */
-
 .productPage .relataedProducts {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    @apply grid gap-[1rem];
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 

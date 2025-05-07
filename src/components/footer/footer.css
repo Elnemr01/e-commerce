@@ -1,77 +1,35 @@
-footer {
-
-}
-
 footer .firstPart {
-    display: flex;
-    justify-content: space-between;
-    gap: 80px;
-    color: rgb(75 85 99 );
-    border-bottom: 1px solid #eee;
-    padding-bottom: 50px;
-    font-size: 14px;
-    margin-top: 80px;
+@apply flex justify-between gap-[80px] text-gray-600 border-b border-[#eee] pb-[50px] text-[14px] mt-[80px];
 }
 
-@media (width<=640px) {
-    footer .firstPart {
-        flex-direction: column;
-    }
+@media (max-width: 640px) {
+footer .firstPart {
+    @apply flex-col;
+}
 }
 
 footer .firstPart .image {
-    max-width: 130px;
-    margin-bottom: 15px;
-}
-
-footer .firstPart .text {
-    
-}
-
-footer .firstPart .company {
-    
+@apply max-w-[130px] mb-[15px];
 }
 
 footer h2 {
-    font-size: 22px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: black;
-    margin-bottom: 15px;
-}
-
-footer .firstPart .company ul {
-    
+@apply text-[22px] font-semibold uppercase text-black mb-[15px];
 }
 
 footer .firstPart .company ul li {
-    text-transform: capitalize;
-    padding: 3px 0;
-}
-
-footer .firstPart .contact {
-    
-}
-
-footer h2 {
-    
+@apply capitalize py-[3px];
 }
 
 footer .firstPart .contact p {
-    padding: 3px 0;
+@apply py-[3px];
 }
 
 footer .copyRigth {
-    padding: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: .875rem;
-    font-size: 0.75rem;
+@apply p-[25px] flex justify-center items-center text-[0.75rem];
 }
 
-@media (width <=400px) {
-    footer .copyRigth {
-        font-size: 0.75rem;
-    }
+@media (max-width: 400px) {
+footer .copyRigth {
+    @apply text-[0.75rem];
+}
 }

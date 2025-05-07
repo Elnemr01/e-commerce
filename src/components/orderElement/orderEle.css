@@ -1,81 +1,54 @@
 .orderElement {
-    display: grid;
-    grid-template-columns: 4fr 2fr .5fr;
-    align-items: center;
-    border-top: 1px solid #80808045;
-    border-bottom: 1px solid #80808045;
-    padding: 1rem 0;
-    color: rgb(55 65 81 );
+@apply grid items-center border-t-[1px] border-b-[1px] border-[#80808045] py-[1rem] text-gray-700;
+grid-template-columns: 4fr 2fr 0.5fr;
 }
 
-@media (width<=566px) {
-    .orderElement {
-        grid-template-rows: 2fr 1fr 1fr;
-        grid-template-columns: auto;
-    }
+@media (max-width: 566px) {
+.orderElement {
+    grid-template-columns: auto;
+    grid-template-rows: 2fr 1fr 1fr;
 }
-
-
+}
 
 .orderElement .data {
-    display: flex;
-    gap: 1.25rem;
+@apply flex gap-[1.25rem];
 }
 
 .orderElement .data .image {
-    max-width: 5rem;
+@apply max-w-[5rem];
 }
 
 .orderElement .data .textData .name {
-    font-size: 1.2rem;
-    font-weight: 600;
+@apply text-[1.2rem] font-semibold;
 }
 
-@media (width<=566px) {
-    .orderElement .data .textData .name {
-        font-size: .875rem;
-    }
+@media (max-width: 566px) {
+.orderElement .data .textData .name {
+    @apply text-[0.875rem];
+}
 }
 
 .orderElement .data .textData span:first-of-type {
-    font-size: 1rem;
-    margin-top: 6px;
+@apply text-[1rem] mt-[6px];
 }
 
 .orderElement .data .textData span.quantity,
 .orderElement .data .textData span.size {
-    margin-left: 1rem;
-    margin-top: 6px;
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: 400;
+@apply ml-[1rem] mt-[6px] inline-block text-[1rem] font-normal;
 }
 
 .orderElement > button {
-    cursor: pointer;
-    width: max-content;
-    font-size: 13px;
-    font-weight: 500;
-    border: 1px solid #eee;
-    padding: 7px 10px;
-    text-transform: capitalize;
+@apply cursor-pointer w-max text-[13px] font-medium border border-[#eee] px-[10px] py-[7px] capitalize;
 }
 
 .orderPlaced {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+@apply flex items-center gap-[10px];
 }
 
 .orderPlaced p:first-of-type {
-    width: 10px;
-    height: 10px;
-    background-color: rgb(34 197 94);
-    border-radius: 50%;
+@apply w-[10px] h-[10px] bg-green-500 rounded-full;
 }
 
 .orderPlaced p:last-of-type {
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: capitalize;
+@apply text-[1rem] font-medium capitalize;
 }

@@ -1,64 +1,35 @@
-
 .cartPage .title {
-    align-items: flex-start;
-    margin: 10px 0;
-    padding: 10px;
-}
-
-.cartPage .choicenProducts .products {
-
+    @apply items-start my-[10px] p-[10px];
 }
 
 /* count the total section style */
 
 .cartPage .total {
-    margin-top: 50px;
-    display: flex;
-    justify-content: end;
-    margin-bottom: 100px;
+    @apply mt-[50px] flex justify-end mb-[100px];
 }
 
 .cartPage .total > div {
-    flex-basis: 50%;
-    text-align: end;
+    @apply basis-1/2 text-end;
 }
 
-@media (width <=667px) {
+@media (width <= 667px) {
     .cartPage .total > div {
-        flex-basis: 100%;
+    @apply basis-full;
     }
 }
 
-.cartPage .total .countTotal {
-    
-}
-
 .cartPage .total .countTotal p {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 400;
-    font-size: 1rem;
-    padding: 5px 10px;
+    @apply flex justify-between items-center font-normal text-[1rem] px-[10px] py-[5px];
 }
 
 .cartPage .total .countTotal p:nth-child(2) {
-    border-top: 1px solid #Eee;
-    border-bottom: 1px solid #Eee;
+    @apply border-t border-b border-[#eee];
 }
 
-
 .cartPage .total .countTotal p:last-child {
-    font-weight: 600;
+    @apply font-semibold;
 }
 
 .total button {
-    width: fit-content;
-    font-size: .875rem;
-    font-weight: 500;
-    background-color: black;
-    color: white;
-    padding: 12px 32px;
-    text-transform: uppercase;
-    margin-top: 25px;
+    @apply w-fit text-[0.875rem] font-medium bg-black text-white px-[32px] py-[12px] uppercase mt-[25px];
 }

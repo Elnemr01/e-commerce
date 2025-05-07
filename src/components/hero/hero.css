@@ -1,56 +1,37 @@
-
 .landing {
-    display: flex;
-    border: 1px solid black;
-    font-family: Prata, serif;
+@apply flex border border-black font-[Prata,serif];
 }
 
-@media (width <=667px) {
-    .landing {
-        flex-direction: column;
-        max-width: 100svh;
-    }
-
-    .landing .text {
-        padding: 50px 0;
-    }
+@media (max-width: 667px) {
+.landing {
+    @apply flex-col max-w-[100svh];
 }
 
 .landing .text {
-    flex-basis: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-transform: uppercase;
-    color: #414141;
+    @apply py-[50px];
+}
+}
+
+.landing .text {
+@apply basis-1/2 flex flex-col justify-center items-center uppercase text-[#414141];
 }
 
 .landing .text .part {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+@apply flex items-center gap-[5px];
 }
 
-.landing .text .p1 p:first-child,
-.landing .text .p2 p:last-child {
-    width: 50px;
-    height: 2px;
-    background-color: black;
+.landing .text .p1 p:first-child {
+@apply w-[50px] h-[2px] bg-black;
 }
 
 .landing .text .p2 p:last-child {
-    width: 30px;
-    height: 1.5px;
+@apply w-[30px] h-[1.5px] bg-black;
 }
 
 .landing .text h2 {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 600;
-    text-transform: capitalize;
+@apply text-center text-[2rem] font-semibold capitalize;
 }
 
 .landing .image {
-    flex-basis: 50%;
+@apply basis-1/2;
 }
