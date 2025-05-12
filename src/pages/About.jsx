@@ -6,7 +6,7 @@ import { assets } from '../assets/frontend_assets/assets'
 const About = () => {
     return (
         <div className='aboutPage'>
-            <CommonTittle word1={'about'} word2={'us'} showP={false}/>
+            <CommonTittle word1={'about'} word2={'us'}/>
             <div className="aboutLanding">
                 <div className="image">
                     <img src={assets.about_img} alt="chect Connection" loading='lazy'/>
